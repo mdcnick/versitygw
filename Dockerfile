@@ -23,6 +23,8 @@ RUN go build -ldflags "-X=main.Build=${BUILD} -X=main.BuildTime=${TIME} -X=main.
 
 FROM alpine:latest
 
+RUN apk upgrade --no-cache
+
 # These arguments can be overridden when building the image
 ARG IAM_DIR=/tmp/vgw
 ARG SETUP_DIR=/tmp/vgw
